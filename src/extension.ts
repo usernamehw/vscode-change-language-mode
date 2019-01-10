@@ -1,18 +1,21 @@
 'use strict';
 import { languages, window, commands, ExtensionContext } from 'vscode';
 export function activate(ctx: ExtensionContext) {
-	const disposable = commands.registerCommand('changeLanguageMode.change', ({ languageId }) => {
+	const disposable = commands.registerCommand('changeLanguageMode.change', (arg) => {
 		const activeEditor = window.activeTextEditor;
 		if (!activeEditor) {
 			return;
 		}
-		if (typeof languageId !== 'string') {
-			return;
+		let languageId;
+
+		if (typeof arg === 'string') {
+			languageId = arg;
+		} else if (typeof arg.languageId === 'string') {
+			languageId = arg.languageId;
 		}
-		if (typeof languages.setTextDocumentLanguage === 'undefined') {
-			return;
+		if (languageId) {
+			languages.setTextDocumentLanguage(activeEditor.document, languageId);
 		}
-		languages.setTextDocumentLanguage(activeEditor.document, languageId);
 	});
 	ctx.subscriptions.push(disposable);
 }

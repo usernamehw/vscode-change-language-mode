@@ -4,6 +4,14 @@
 {
 	"key": "ctrl+shift+8",
 	"command": "changeLanguageMode.change",
+	"args": "typescript"
+}
+```
+OR
+```json
+{
+	"key": "ctrl+shift+8",
+	"command": "changeLanguageMode.change",
 	"args": {
 		"languageId": "typescript"
 	}
