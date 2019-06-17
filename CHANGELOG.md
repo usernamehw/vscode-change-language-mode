@@ -1,3 +1,7 @@
+## 0.0.3 `17 Jun 2019`
+
+- Property contribute command => no warning in `keybindings.json` (but an extra entry in Command Palette)
+
 ## 0.0.2 `11 Jan 2019`
 
 - Excluded `package-lock.json`. Package size **90Kb** => **6Kb**

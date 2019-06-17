@@ -27,7 +27,14 @@
 		"onCommand:changeLanguageMode.change"
 	],
 	"main": "./out/extension",
-	"contributes": {},
+	"contributes": {
+		"commands": [
+			{
+				"title": "Change Language Mode",
+				"command": "changeLanguageMode.change"
+			}
+		]
+	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
@@ -36,10 +43,11 @@
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.1.4",
-		"vscode": "^1.1.25",
-		"tslint": "^5.8.0",
-		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
+		"@types/node": "^10.14.9",
+		"tslint": "^5.17.0",
+		"typescript": "^3.5.2"
+	},
+	"dependencies": {
+		"@types/vscode": "^1.28.0"
 	}
 }
