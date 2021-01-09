@@ -1,7 +1,7 @@
-'use strict';
-import { languages, window, commands, ExtensionContext } from 'vscode';
+import { commands, ExtensionContext, languages, window } from 'vscode';
+
 export function activate(ctx: ExtensionContext) {
-	const disposable = commands.registerCommand('changeLanguageMode.change', (arg) => {
+	const disposable = commands.registerCommand('changeLanguageMode.change', arg => {
 		if (typeof arg === 'undefined') {
 			commands.executeCommand('workbench.action.editor.changeLanguageMode');
 			return;
