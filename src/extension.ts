@@ -1,7 +1,7 @@
 import { commands, ExtensionContext, languages, window } from 'vscode';
 
 export function activate(ctx: ExtensionContext) {
-	const disposable = commands.registerCommand('changeLanguageMode.change', arg => {
+	const changeLanguageDisposable = commands.registerCommand('changeLanguageMode.change', arg => {
 		if (typeof arg === 'undefined') {
 			commands.executeCommand('workbench.action.editor.changeLanguageMode');
 			return;
@@ -21,7 +21,14 @@ export function activate(ctx: ExtensionContext) {
 			languages.setTextDocumentLanguage(activeEditor.document, languageId);
 		}
 	});
-	ctx.subscriptions.push(disposable);
+	const getActiveFileLanguageDisposable = commands.registerCommand('changeLanguageMode.getActiveEditorLanguage', () => {
+		const editor = window.activeTextEditor;
+		if (!editor) {
+			return;
+		}
+		window.showInformationMessage(editor.document.languageId);
+	});
+	ctx.subscriptions.push(changeLanguageDisposable, getActiveFileLanguageDisposable);
 }
 
 export function deactivate() { }

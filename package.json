@@ -24,7 +24,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:changeLanguageMode.change"
+		"onCommand:changeLanguageMode.change",
+		"onCommand:changeLanguageMode.getActiveEditorLanguage"
 	],
 	"main": "./dist/extension",
 	"contributes": {
@@ -32,6 +33,10 @@
 			{
 				"title": "Change Language Mode",
 				"command": "changeLanguageMode.change"
+			},
+			{
+				"title": "Get active editor language id",
+				"command": "changeLanguageMode.getActiveEditorLanguage"
 			}
 		]
 	},
