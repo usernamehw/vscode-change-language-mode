@@ -1,3 +1,7 @@
+## 0.0.4 `09 Jan 2021`
+
+- ✨ Add command to get active editor language id
+
 ## 0.0.3 `17 Jun 2019`
 
 - Property contribute command => no warning in `keybindings.json` (but an extra entry in Command Palette)
