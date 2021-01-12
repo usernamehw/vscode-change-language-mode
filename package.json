@@ -23,6 +23,9 @@
 	"categories": [
 		"Other"
 	],
+	"extensionKind": [
+		"ui"
+	],
 	"activationEvents": [
 		"onCommand:changeLanguageMode.change",
 		"onCommand:changeLanguageMode.getActiveEditorLanguage"
